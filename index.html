@@ -3,13 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario de contacto U La Salle</title>
+  <title>Contacto - U La Salle</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Bienvenido al Formulario de contacto U La Salle</h1>
-  <p>Haz clic en el siguiente enlace para contactarnos:</p>
-  <a href="contacto.html">Ir al formulario</a>
+  <div class="container">
+    <div class="header">
+      <div class="logo-container">
+        <img src="img/download.png" alt="Descripción de la imagen">
+      </div>
+      <h1>Contacto</h1>
+      <p>Estamos aquí para ayudarte</p>
+    </div>
+
+    <div class="form-container">
+      <div class="success-message" id="successMessage">
+        ¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.
+      </div>
+
+      <form id="contactForm" action="procesar.php" method="POST">
+        <div class="form-group">
+          <label for="nombre">Nombre completo <span class="required">*</span></label>
+          <input type="text" id="nombre" name="nombre" required>
+          <div class="error-message">Por favor, ingresa tu nombre completo</div>
+        </div>
+
+        <div class="form-group">
+          <label for="correo">Correo electrónico <span class="required">*</span></label>
+          <input type="email" id="correo" name="correo" required>
+          <div class="error-message">Por favor, ingresa un correo electrónico válido</div>
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Teléfono <span class="required">*</span></label>
+          <input type="tel" id="telefono" name="telefono" required>
+          <div class="error-message">Por favor, ingresa un número de teléfono válido</div>
+        </div>
+
+        <div class="form-group">
+          <label for="programa">Programa o carrera <span class="required">*</span></label>
+          <select id="programa" name="programa" required>
+            <option value="">Selecciona una opción</option>
+            <option value="ingenieria">Ingeniería</option>
+            <option value="administracion">Administración</option>
+            <option value="derecho">Derecho</option>
+            <option value="medicina">Medicina</option>
+            <option value="arquitectura">Arquitectura</option>
+            <option value="psicologia">Psicología</option>
+            <option value="comunicacion">Comunicación</option>
+            <option value="educacion">Educación</option>
+            <option value="otro">Otro</option>
+          </select>
+          <div class="error-message">Por favor, selecciona un programa o carrera</div>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje <span class="required">*</span></label>
+          <textarea id="mensaje" name="mensaje" required></textarea>
+          <div class="error-message">Por favor, escribe tu mensaje</div>
+        </div>
+        <button type="submit" class="submit-btn">Enviar mensaje</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
